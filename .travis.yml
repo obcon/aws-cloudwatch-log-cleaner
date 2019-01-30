@@ -4,7 +4,8 @@ python:
   - "3.6"
 
 install:
-  - pip install -r source/requirements.txt
+  - mkdir target
+  - pip install -t target -r source/requirements.txt
 
 script: 
   - python --version
