@@ -15,4 +15,4 @@ mkdir -p ${UPLOAD_DIR}
 pip install -t ${PACKAGE_DIR} -r ${SOURCE_DIR}/requirements.txt
 cp -r ${SOURCE_DIR}/source/*.py ${PACKAGE_DIR}
 cd ${PACKAGE_DIR}
-zip -r ${UPLOAD_DIR}/${VERSION}.zip *
+zip -r ${UPLOAD_DIR}/aws-cloudwatch-log-cleaner-${VERSION}.zip *
