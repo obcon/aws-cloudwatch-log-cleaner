@@ -13,6 +13,6 @@ mkdir -p ${PACKAGE_DIR}
 mkdir -p ${UPLOAD_DIR}
 
 pip install -t ${PACKAGE_DIR} -r ${SOURCE_DIR}/requirements.txt
-rsync -avvP ${SOURCE_DIR}/source/ ${PACKAGE_DIR}
+rsync -avvP ${SOURCE_DIR}/ ${PACKAGE_DIR}
 cd ${PACKAGE_DIR}
 zip -r ${UPLOAD_DIR}/aws-cloudwatch-log-cleaner-${VERSION}.zip *
