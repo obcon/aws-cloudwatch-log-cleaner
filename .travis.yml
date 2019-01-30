@@ -3,9 +3,5 @@ language: python
 python:
   - "3.6"
 
-install:
-  - mkdir target
-  - pip install -t target -r source/requirements.txt
-
 script: 
-  - python --version
+  - ./scripts/build.sh
