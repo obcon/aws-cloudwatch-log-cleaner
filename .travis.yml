@@ -1,7 +1,15 @@
 language: python
-
 python:
-  - "3.6"
-
-script: 
-  - ./scripts/build.sh
+- '3.6'
+script:
+- "./scripts/build.sh"
+deploy:
+  provider: s3
+  access_key_id:
+    secure: EH51qv9N0VmVmKAGZ8aSnuabwrfyc73JHwbNoU/bcy9IT0xnyllzxyUV7xEGtK+dOpe2vU9uppN413sq/cAYqAk8uNy+l4acvLXJnM8R+5Dk/RDorfBbjBuDUzluIhkWVPbB4FbIFVUdaIpCE3GNszM5EjNe08GQvj/JQK3YeS9wR45agED7MdDGW1BBEw+nzE5YNwoQ0XrfLl6dva6/cgHsMYab/avDA4P6hPD0zjMPFx6IqUxYrUPXOxunGppwEwPWnMxiDoiwNz1UsgeeOe2fkBgLyGwQhoU6SDJxpD9yUh0PUZh6NbrYLci+yDQiJUsKUoquCyWC4GZR9oSLRsZDxBTp+i9URYtBMbhBLk8oo+rgfM69lpIlm3Vkkkf02xGmD5/EFb46R3WSE3v1I28pkVXyqdf0mbJvV/+zoTb9JXVpYv9Bhzy7Rz6RZ9lwsfZPOalBnfpA3SJEt1eGf8icSpzAONFzuJmamZRFwBnUlTGbW/tWz01+3rK5LBgomFzP2WVOroKxN7YHJ0+leNwCdELKiaKGKdAA0eZcMHx71RB+S/yQPfF19s8sMwJ66o6Tjh0nPazA/r5H+KorX9aZikK5jW2oBwTwhN4SAugn7NKKgxoRN0blzOQRNP/L0aJjffUG5wFOIxI7yjA1/wPpEbHf4FL7MGPgpdHNEHA=
+  secret_access_key:
+    secure: Em/LwEmIzPUFes//x0myw0KE5/V3E4mXarGG9BK+UK9SfruC4DwaEuLyFFnt9KZh5+XfpqRvkSCeAL40RXDnQVLa0+ZzC5ovyeKcTzGuPOvhbglRnGDFRg8WVSoz/QyqC9ReXX1rAjRtLUR7GhFN8AjyXpRhpYYZMbwH3ohvLGf+Jna6yVNfCsjJ0Hs9KBba1Ftfh++GF2dD7ODZQDpLFsIMrXPx67S8tvV/p6DzBEcNFYdotji1quN/YKxdArqz+MaAAo/dF9jjnwqSJ62EnTOvEm/B78Cb50J2eXys3NVPsc7ZYbd1aAK5cDb0pd/uvlksZ74bRI4NpDPjHqH76hTT+d06nfhjx+KAiWgMwGUF8chAMc71Q3E/CzhfTRS36/ytEJTV0TimGVstoMo6BqzZLemTlSqia3EVMqay3rncukOVu+OCcAsYeeymwRHy+wgZNkfeOgFBTU7oeNEKsU7HkSwu6sKZlMrW0HtLN5AFtJNTTIhhkqaOdny13uHKEa2yE55ZUSau6QNNJtlsQ+JAWFTcuVa/V7HNEDuJxyXxFZWGrKhGTbla9L1UCa393MZOuuxOXkX8AEWFsL759RWNUzOrgpggq2wfHPeDv1wsnXbvgBQEZ8hZiaopmwbNNUl733kMKplR4WAN8Mt9XMQVtQ9/tLPGRgU1UPX9HQE=
+  bucket: ci-cd-test-12345678
+  region: eu-central-1
+  skip_cleanup: true
+  upload-dir: aws-cloudwatch-log-cleaner
